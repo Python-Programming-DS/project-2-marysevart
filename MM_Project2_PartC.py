@@ -132,7 +132,6 @@ class Game:
                 current_state.append(mapping.get(self.board.c[i][j], 0))
         # predict a single move for the current board state
         y_pred = rf.predict([current_state])
-        print(f"Predicted move for current board state: {y_pred[0]}")
         accuracy = rf.score(X_test, y_test)
         print(f"Model accuracy: {accuracy*100:.2f}%")
         return y_pred
